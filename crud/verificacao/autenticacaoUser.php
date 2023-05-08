@@ -4,7 +4,7 @@
     $senha = $_POST['senha'];
     $fp = fopen(usuario,'r');
     while( ($linha = fgetcsv($fp)) !== false){
-        if($login == $linha[1] && $senha = $linha[2]){
+        if($login == $linha[1] && $senha == $linha[2]){
             exit();
         }
     }
