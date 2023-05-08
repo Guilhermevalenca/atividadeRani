@@ -11,6 +11,7 @@
 </head>
 <body>
     <button onclick="window.location.href = './crud2/' ">crud2</button><br>
-    <button onclick="window.location.href= '/src/vizualizarData.php'">informações da conta</button>
+    <button onclick="window.location.href= '/src/vizualizarData.php'">informações da conta</button><br>
+    <button onclick="window.location.href='./sair.php'">sair</button>
 </body>
 </html>
