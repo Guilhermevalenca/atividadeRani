@@ -1,3 +1,9 @@
+<?php 
+    session_start();
+    if($_SESSION['autenticacao'] == true){
+        header('location: /src/');
+    }
+?>
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
