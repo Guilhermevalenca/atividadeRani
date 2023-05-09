@@ -1,6 +1,5 @@
 <?php 
     require('../verificacaoAutencidade.php');
-    require('./dataSource.php');
 ?>
 <!DOCTYPE html>
 <html lang="pt-br">
@@ -15,8 +14,10 @@
         $data = $_GET['info'];
     ?>
     <form id="formEdit" action="./action/edit.php" method="POST">
-        <input required type="text" name="info[]" value="<?= $data[1] ?>">
-        <input required type="text" name="info[]" value="<?= $data[2] ?>">
+        <input type="hidden" name="info[]" value="<?= $data[0] ?>">
+        <input type="text" name="info[]" value="<?= $data[1] ?>">
+        <input type="text" name="info[]" value="<?= $data[2] ?>">
+        <input type="text" name="info[]" value="<?= $data[3] ?>">
         <input type="submit" value="editar">
     </form>
     <script>

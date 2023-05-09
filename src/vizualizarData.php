@@ -41,6 +41,7 @@
         <?php endif ?>
     <?php endwhile ?>
     </table>
+    <p>OBS: para mudar sua senha é necessario digitar sua senha atual, logo apos confirma sua senha podera atualizar sua senha.</p>
     <button onclick="window.location.href='/crud/delete.php'">Deletar Conta</button>
     <script defer src="/script/update/senha.js"></script>
 </body>

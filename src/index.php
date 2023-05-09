@@ -10,8 +10,8 @@
     <title>Pagina Principal</title>
 </head>
 <body>
-    <button onclick="window.location.href = './crud2/' ">crud2</button><br>
-    <button onclick="window.location.href= '/src/vizualizarData.php'">informações da conta</button><br>
-    <button onclick="window.location.href='./sair.php'">sair</button>
+    <button onclick="window.location.href = './crudJogos/' ">Jogos</button><br>
+    <button onclick="window.location.href= '/src/vizualizarData.php'">Informações da conta</button><br>
+    <button onclick="window.location.href='./sair.php'">Sair da conta</button>
 </body>
 </html>

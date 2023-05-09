@@ -3,7 +3,7 @@
         exit();
     }
     require('./dataSource.php');
-    $fp = fopen(crud2,'r');
+    $fp = fopen(jogos,'r');
     while( ($linha = fgetcsv($fp)) !== false){
         if($linha[0] == $_POST['pk']){
             echo "jaRealizado";

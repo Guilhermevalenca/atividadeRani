@@ -6,10 +6,11 @@
     $data = [
         'info1' => $_POST['info1'],
         'info2' => $_POST['info2'],
-        'info3' => $_POST['info3']
+        'info3' => $_POST['info3'],
+        'info4' => $_POST['info4']
     ];
-    $fp = fopen(crud2,'a');
+    $fp = fopen(jogos,'a');
     fputcsv($fp,$data);
     fclose($fp);
-    header('location: /src/crud2/');
+    header('location: /src/crudJogos/');
 ?>

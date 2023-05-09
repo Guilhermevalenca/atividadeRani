@@ -11,25 +11,28 @@
     <title>Document</title>
 </head>
 <body>
-    <h2>informações:</h2>
+    <h2>Jogos ja cadastrados</h2>
     <table>
         <thead>
-            <th>nome</th>
-            <th>tipo</th>
-            <th>data</th>
+            <th>Nome</th>
+            <th>Desenvolvedor</th>
+            <th>Genero</th>
+            <th>Plataforma</th>
         </thead>
         <tbody>
-        <?php $fp = fopen(crud2,'r'); ?>
+        <?php $fp = fopen(jogos,'r'); ?>
         <?php while( ($linha = fgetcsv($fp)) !== false): ?>
             <tr>
                 <td><?= $linha[0] ?></td>
                 <td><?= $linha[1] ?></td>
                 <td><?= $linha[2] ?></td>
+                <td><?= $linha[3] ?></td>
                 <td>
                     <form action="./action/delete.php" method="POST">
                         <input type="hidden" name="info[]" value="<?= $linha[0] ?>">
                         <input type="hidden" name="info[]" value="<?= $linha[1] ?>">
                         <input type="hidden" name="info[]" value="<?= $linha[2] ?>">
+                        <input type="hidden" name="info[]" value="<?= $linha[3] ?>">
                         <input type="submit" value="deletar">
                     </form>
                 </td>
@@ -38,6 +41,7 @@
                         <input type="hidden" name="info[]" value="<?= $linha[0] ?>">
                         <input type="hidden" name="info[]" value="<?= $linha[1] ?>">
                         <input type="hidden" name="info[]" value="<?= $linha[2] ?>">
+                        <input type="hidden" name="info[]" value="<?= $linha[3] ?>">
                         <input type="submit" value="editar">
                     </form>
                 </td>
@@ -46,10 +50,11 @@
         </tbody>
     </table>
     <form id="formAdd" action="./action/add.php" method="POST">
-        <input id="pk" required type="text" name="info1" placeholder="primeira informação">
-        <input required type="text" name="info2" placeholder="segunda informação">
-        <input required type="text" name="info3" placeholder="terceura informação">
-        <input type="submit">
+        <input id="pk" required type="text" name="info1" placeholder="Nome do jogo">
+        <input required type="text" name="info2" placeholder="Desenvolvedor do jogo">
+        <input required type="text" name="info3" placeholder="Genero do jogo">
+        <input required type="text" name="info4" placeholder="Plataforma do jogo">
+        <input type="submit" value="Adicionar jogo">
     </form>
     <script>
         const formAdd = document.querySelector('#formAdd');
@@ -60,7 +65,7 @@
             verificar.onreadystatechange = function () {
                 if(this.readyState === 4 && this.status === 200){
                     if(this.responseText == "jaRealizado"){
-                        alert('cadastro ja realizado');
+                        alert('O nome deste jogo ja estar cadastrado!!!');
                     }else{
                         formAdd.submit();
                     }
@@ -72,5 +77,6 @@
             verificar.send(data);
         })
     </script>
+    <button onclick="window.location.href='/src/'">Voltar</button>
 </body>
 </html>
